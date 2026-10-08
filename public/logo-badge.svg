@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <path id="ring" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0" />
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="#F8F5EC" stroke="#3B4229" stroke-width="3" />
+  <circle cx="100" cy="100" r="86" fill="none" stroke="#3B4229" stroke-width="1" stroke-dasharray="2 4" />
+  <circle cx="100" cy="100" r="60" fill="#5C6B3E" />
+  <text font-family="Georgia, 'Times New Roman', serif" font-size="13" letter-spacing="2.6" fill="#3B4229">
+    <textPath href="#ring" startOffset="0">ROLLBAC ✦ YOUR PRECIOUS MOMENTS BOUND IN PAPER ✦</textPath>
+  </text>
+  <g fill="#F8F5EC">
+    <circle cx="80" cy="74" r="2.4" /><circle cx="100" cy="74" r="2.4" /><circle cx="120" cy="74" r="2.4" />
+    <circle cx="80" cy="126" r="2.4" /><circle cx="100" cy="126" r="2.4" /><circle cx="120" cy="126" r="2.4" />
+  </g>
+  <text x="100" y="116" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="46" font-style="italic" fill="#F8F5EC">R</text>
+  <path d="M70,140 C85,150 115,150 130,140" fill="none" stroke="#E2A93D" stroke-width="2" stroke-linecap="round" />
+</svg>

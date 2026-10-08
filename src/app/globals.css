@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Ivory — the brand default: bright pastel Madras. */
+  :root {
+    --c-ivory: 248 245 236;
+    --c-cloud: 255 255 255;
+    --c-mist: 219 215 201;
+    --c-olive: 92 107 62;
+    --c-pine: 59 66 41;
+    --c-rust: 166 85 61;
+    --c-marigold: 226 169 61;
+    --c-sage: 143 168 118;
+    --art-from: #ffffff;
+    --art-to: #f8f5ec;
+    --grain: rgba(59, 66, 41, 0.05);
+    color-scheme: light;
+  }
+
+  /* Dark — deep pine evenings, same roles with the lightness flipped. */
+  [data-theme="dark"] {
+    --c-ivory: 28 32 24;
+    --c-cloud: 38 43 33;
+    --c-mist: 62 69 53;
+    --c-olive: 172 190 135;
+    --c-pine: 239 235 221;
+    --c-rust: 221 142 116;
+    --c-marigold: 232 181 84;
+    --c-sage: 160 184 134;
+    --art-from: #2c3226;
+    --art-to: #20251c;
+    --grain: rgba(239, 235, 221, 0.04);
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ivory text-pine font-body;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-image: radial-gradient(circle at 1px 1px, var(--grain) 1px, transparent 0);
+    background-size: 22px 22px;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+
+  ::selection {
+    background-color: #5c6b3e55;
+    color: #ffffff;
+  }
+
+  *:focus-visible {
+    outline: 2px solid #5c6b3e;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+}
+
+/* --- 3D motion ------------------------------------------------------------ */
+
+/* Sections and cards rise and un-tilt into place as they scroll into view. */
+.reveal-3d {
+  opacity: 0;
+  transform: perspective(1200px) rotateX(18deg) translateY(48px) scale(0.96);
+  transform-origin: 50% 100%;
+  transition:
+    opacity 0.8s ease,
+    transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal-3d.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Book page turn. */
+.page-leaf {
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
+  transition: transform 0.8s cubic-bezier(0.45, 0.05, 0.25, 1);
+}
+.page-leaf.from-left {
+  transform-origin: 100% 50%;
+}
+.page-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-3d {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .page-leaf {
+    transition: none;
+  }
+}

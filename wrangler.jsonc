@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "rollbac",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-09-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": { "directory": ".open-next/assets", "binding": "ASSETS" },
+  "observability": { "enabled": true },
+  "kv_namespaces": [
+    // Customer photo uploads (KV namespace "rollbac-photos").
+    { "binding": "PHOTOS", "id": "REPLACE_WITH_ROLLBAC_PHOTOS_KV_ID" }
+  ]
+}
