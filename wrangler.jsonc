@@ -8,6 +8,6 @@
   "observability": { "enabled": true },
   "kv_namespaces": [
     // Customer photo uploads (KV namespace "rollbac-photos").
-    { "binding": "PHOTOS", "id": "REPLACE_WITH_ROLLBAC_PHOTOS_KV_ID" }
+    { "binding": "PHOTOS", "id": "6d9f3fb578044f2898c0e734a02473e8" }
   ]
 }
